@@ -57,7 +57,8 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val sinkE = Module(new SinkE(params))
   val sinkX = Module(new SinkX(params))
 
-  sinkA.io.a <> io.in.a
+  sinkA.io.a <> io.in.a //zzz trace
+
   sinkC.io.c <> io.in.c
   sinkE.io.e <> io.in.e
   sinkD.io.d <> io.out.d

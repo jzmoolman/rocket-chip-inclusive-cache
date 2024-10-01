@@ -89,6 +89,8 @@ class SinkA(params: InclusiveCacheParameters) extends Module
   io.req.bits.param  := a.bits.param
   io.req.bits.size   := a.bits.size
   io.req.bits.source := a.bits.source
+  /// ZZZ
+  io.req.bits.ee     := a.bits.ee
   io.req.bits.offset := offset
   io.req.bits.set    := set
   io.req.bits.tag    := tag

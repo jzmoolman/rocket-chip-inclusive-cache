@@ -59,7 +59,6 @@ class SinkC(params: InclusiveCacheParameters) extends Module
     // Tie off unused ports
     io.req.valid := false.B
     io.req.bits := DontCare
-    io.resp.valid := false.B
     io.resp.bits := DontCare
     io.c.ready := true.B
     io.set := 0.U
@@ -68,6 +67,7 @@ class SinkC(params: InclusiveCacheParameters) extends Module
     io.bs_dat := DontCare
     io.rel_pop.ready := true.B
     io.rel_beat := DontCare
+    //zzz
   } else {
     // No restrictions on the type of buffer
     val c = params.micro.innerBuf.c(io.c)
@@ -146,6 +146,9 @@ class SinkC(params: InclusiveCacheParameters) extends Module
     io.req.bits.size   := c.bits.size
     io.req.bits.source := c.bits.source
     io.req.bits.offset := offset
+    //zzz
+//    io.req.bits.ee     := c.bits.ee
+    io.req.bits.ee     := true.B
     io.req.bits.set    := set
     io.req.bits.tag    := tag
     io.req.bits.put    := put

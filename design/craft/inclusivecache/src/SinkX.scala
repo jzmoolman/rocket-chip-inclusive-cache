@@ -47,6 +47,8 @@ class SinkX(params: InclusiveCacheParameters) extends Module
   // The source does not matter, because a flush command never allocates a way.
   // However, it must be a legal source, otherwise assertions might spuriously fire.
   io.req.bits.source := params.inner.client.clients.map(_.sourceId.start).min.U
+  // zzzz
+  io.req.bits.ee     := true.B
   io.req.bits.offset := 0.U
   io.req.bits.set    := set
   io.req.bits.tag    := tag
