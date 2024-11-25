@@ -56,5 +56,5 @@ class SourceA(params: InclusiveCacheParameters) extends Module
   a.bits.data    := 0.U
   a.bits.corrupt := false.B
   //ZZZ
-  a.bits.ee := true.B;
+  a.bits.ee_a := false.B;
 }
